@@ -1,22 +1,23 @@
-import { ReactNode } from "react";
-
-type Props = {
+type SectionProps = {
   id: string;
   title: string;
-  children: ReactNode;
+  items: string[];
 };
 
-export default function Section({ id, title, children }: Props) {
+export default function Section({ id, title, items }: SectionProps) {
   return (
-    <section id={id} className="border-t border-black/10">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-3">
-            <h2 className="text-sm uppercase tracking-[0.28em] text-muted">{title}</h2>
-          </div>
-          <div className="md:col-span-9">{children}</div>
-        </div>
-      </div>
+    <section id={id} className="scroll-mt-24 py-16">
+      <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-6">
+        {title}
+      </h2>
+
+      <ul className="space-y-3 text-slate-700 leading-7">
+        {items.map((item, index) => (
+          <li key={index} className="list-disc ml-6">
+            {item}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
