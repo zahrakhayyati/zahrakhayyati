@@ -296,30 +296,33 @@ export default function Home() {
         <section id="publications" className="space-y-8 bg-slate-900 text-white p-8 md:p-14 rounded-3xl">
           <div className="space-y-2">
             <span className="text-xs font-mono text-amber-400 tracking-widest uppercase">
-              Book Series & Academic Writings
+              Publications
             </span>
-            <h2 className="text-3xl font-light tracking-tight">
-              Spatial Decision-Making in Sustainable Infrastructure Development
+            <h2 className="text-2xl font-light tracking-tight md:text-3xl">
+              A Compact Development Framework for Administrative-Support Complexes
             </h2>
-            <p className="text-sm text-slate-400 font-mono">University of Tehran Press</p>
+            <p className="text-sm text-slate-400 font-mono">
+              6th International Conference on Modern Technologies in Architecture and Urban Planning, 2025
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-6 border-t border-slate-800">
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-block px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-mono">
-                Volume 1: Educational Infrastructure
+                Featured Paper
               </div>
               <p className="text-slate-300 text-base font-light leading-relaxed">
-                Featuring the <strong className="text-white">Zahra Khayyati Framework</strong> integrating theoretical foundations,
-                empirical case studies, sustainable school design in Bushehr, BIM/Navisworks workflows, and design-build management lessons.
+                A case study of the <strong>Bushehr Nuclear Power Plant Development Plan</strong>, exploring strategies for critical energy infrastructure resilience through a compact development framework.
               </p>
             </div>
             <div className="lg:col-span-4 flex justify-start lg:justify-end">
               <a
-                href="#contact"
+                href="https://civilica.com/doc/2609379/"
+                target="_blank"
+                rel="noreferrer"
                 className="px-6 py-3.5 bg-amber-500 text-slate-950 font-medium rounded-xl hover:bg-amber-400 transition-colors text-sm"
               >
-                Inquire Research Paper
+                View Article on Civilica
               </a>
             </div>
           </div>
