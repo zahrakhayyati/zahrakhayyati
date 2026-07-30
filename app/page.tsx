@@ -1,117 +1,122 @@
-import React from 'react';
-import Section from '../components/Section';
+import Navbar from "@/components/Navbar";
+import Section from "@/components/Section";
 
-export default function Home() {
+const projectList = [
+  {
+    title: "12-Class Sustainable School — Bushehr",
+    text: "An integrated research-to-practice initiative encompassing architectural design, climate-responsive strategies, and sustainable construction management tailored for regional conditions.",
+  },
+  {
+    title: "Spatial Planning for Critical Energy Infrastructure",
+    text: "Doctoral research exploring a life-cycle spatial planning framework using multi-criteria decision-making (MCDM), grounded theory, and systematic review (PRISMA).",
+  },
+  {
+    title: "BIM and Decision Support Integration",
+    text: "Connecting planning intelligence and digital workflows through BIM (Revit/Navisworks), Digital Twins, and Spatial AHP Analysis.",
+  },
+];
+
+const publications = [
+  "Journal articles and conference papers on sustainable infrastructure, planning, and architecture.",
+  "Book Series: Spatial Decision-Making in Sustainable Infrastructure Development (University of Tehran Press).",
+  "Volume 1: Educational Infrastructure — featuring the Zahra Khayyati Framework.",
+];
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen pt-24 pb-16 px-6 max-w-5xl mx-auto">
-      {/* Hero Section */}
-      <section className="py-16 border-b border-gray-100">
-        <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
-          Architect · Design-Build Project Manager · Researcher
-        </span>
-        
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-6 mb-4 tracking-tight">
-          Zahra Khayyati
-        </h1>
-        
-        <p className="text-lg text-slate-600 max-w-3xl leading-relaxed mb-8">
-          PhD Candidate in Spatial Planning & Architecture, specializing in Life-Cycle Spatial Planning Frameworks, 
-          Multi-Criteria Decision-Making (MCDM), and Sustainable Critical Energy Infrastructure.
-        </p>
+    <main className="min-h-screen bg-[#f8f5f0] text-[#1a1a1a]">
+      <Navbar />
 
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            className="px-6 py-3 bg-slate-900 text-white rounded-xl text-sm font-semibold hover:bg-slate-800 transition-colors shadow-sm"
-          >
-            Get in Touch
-          </a>
-          <a
-            href="#research"
-            className="px-6 py-3 bg-slate-100 text-slate-700 rounded-xl text-sm font-semibold hover:bg-slate-200 transition-colors"
-          >
-            Explore Research
-          </a>
+      {/* Hero Section */}
+      <section id="home" className="mx-auto max-w-6xl px-6 pb-24 pt-20 md:pb-28 md:pt-28">
+        <p className="mb-6 text-sm uppercase tracking-[0.28em] text-gray-500 font-medium">
+          Zahra Khayyati | زهرا خیاطی
+        </p>
+        <h1 className="max-w-4xl text-5xl font-light leading-tight tracking-tight md:text-7xl">
+          Architect · Design-Build Project Manager · Researcher
+        </h1>
+        <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-600">
+          PhD Candidate in Architecture & Spatial Planning at the University of Tehran. 
+          Specializing in Life-Cycle Spatial Planning Frameworks for Critical Infrastructure.
+        </p>
+        <div className="mt-10 flex gap-4">
+          <a href="#contact" className="rounded-full bg-[#1a1a1a] px-8 py-3 text-white hover:bg-gray-800 transition">Get in Touch</a>
+          <a href="#projects" className="rounded-full border border-gray-300 px-8 py-3 hover:bg-gray-50 transition">View Projects</a>
         </div>
       </section>
 
       {/* About Section */}
-      <Section id="about" title="About">
-        <div className="space-y-4 text-slate-600 leading-relaxed text-base">
-          <p>
-            I am an architect and design-build project manager with extensive research experience in spatial planning, sustainable infrastructure development, and evidence-based decision frameworks.
-          </p>
-          <p>
-            My work integrates architecture, urban and spatial planning, infrastructure governance, and advanced decision-making methodologies (MCDM, Grounded Theory, PRISMA) to foster resilient and sustainable built environments.
-          </p>
+      <Section title="About" id="about">
+        <p className="text-lg leading-relaxed text-gray-700">
+          I am an architect and design-build project manager with extensive research experience in spatial planning, 
+          sustainable infrastructure development, and evidence-based decision frameworks. 
+          My work integrates architecture, infrastructure governance, and advanced decision-making methodologies 
+          to foster resilient built environments.
+        </p>
+      </Section>
+
+      {/* Projects Section */}
+      <Section title="Key Projects" id="projects">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+          {projectList.map((project, index) => (
+            <div key={index} className="group">
+              <h3 className="mb-4 text-xl font-semibold group-hover:text-gray-600 transition">{project.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{project.text}</p>
+            </div>
+          ))}
         </div>
       </Section>
 
-      {/* Research & Academic Focus */}
-      <Section id="research" title="Research & Academic Focus">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Primary PhD Research</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Developing a comprehensive <strong>Life-Cycle Spatial Planning Framework for Critical Energy Infrastructure</strong>, utilizing hybrid MCDM methodologies, Grounded Theory, and systematic literature review (PRISMA).
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Technical & Methodological Expertise</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Integrating spatial decision-making with modern digital tools including BIM (Revit/Navisworks), Digital Twins, Spatial AHP Analysis, and regulatory technical standards.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Projects */}
-      <Section id="projects" title="Key Projects">
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">
-            Featured Project
-          </span>
-          <h3 className="text-xl font-bold text-slate-900 mt-3 mb-2">
-            12-Class Sustainable School — Bushehr
-          </h3>
-          <p className="text-slate-600 text-sm leading-relaxed mb-4">
-            An integrated research-to-practice initiative encompassing architectural design, climate-responsive strategies, sustainable construction management, and BIM integration tailored for regional conditions.
-          </p>
-        </div>
-      </Section>
-
-      {/* Publications & Books */}
-      <Section id="publications" title="Publications & Forthcoming Books">
-        <div className="space-y-4">
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-            <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Book Series</span>
-            <h3 className="text-lg font-bold text-slate-900 mt-1">
-              Spatial Decision-Making in Sustainable Infrastructure Development
-            </h3>
-            <p className="text-sm text-slate-500 mb-2">University of Tehran Press (Forthcoming)</p>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              <strong>Volume 1: Educational Infrastructure</strong> — Presenting the <em>Zahra Khayati Framework</em> for evidence-based spatial design, BIM adoption, and project delivery.
-            </p>
-          </div>
-        </div>
+      {/* Publications Section */}
+      <Section title="Publications & Books" id="publications">
+        <ul className="space-y-6">
+          {publications.map((pub, index) => (
+            <li key={index} className="border-l-2 border-gray-200 pl-6 py-1 text-gray-700 italic">
+              {pub}
+            </li>
+          ))}
+        </ul>
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact" title="Contact">
-        <div className="p-6 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <h3 className="text-xl font-bold">Let&apos;s Connect</h3>
-            <p className="text-slate-400 text-sm mt-1">Open to academic research collaborations, spatial planning consultations, and design-build initiatives.</p>
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
+        <h2 className="mb-12 text-3xl font-bold tracking-tight">Contact</h2>
+        <div className="rounded-3xl bg-[#1a1a1a] p-8 md:p-12 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+          <div className="space-y-6">
+            <h3 className="text-3xl font-semibold">Let&apos;s Connect</h3>
+            <p className="text-gray-400 max-w-md">
+              Open to academic research collaborations, spatial planning consultations, and design-build initiatives.
+            </p>
+            
+            <div className="space-y-3 text-sm md:text-base">
+              <p className="flex items-center gap-2">
+                <span className="text-gray-500">Institution:</span> 
+                University of Tehran, Department of Architectural Engineering
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-gray-500">Email:</span>
+                <a href="mailto:Sahar.khayyati@ut.ac.ir" className="hover:text-gray-300 underline underline-offset-4">Sahar.khayyati@ut.ac.ir</a>
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="text-gray-500">Phone:</span>
+                <a href="tel:+989171713561" className="hover:text-gray-300 transition">+98 917 171 3561</a>
+              </p>
+              <div className="flex gap-4 pt-2">
+                <a href="https://orcid.org/0009-0005-7018-0523" target="_blank" rel="noreferrer" className="text-sm border border-gray-700 px-4 py-1 rounded-full hover:bg-white hover:text-black transition">ORCID</a>
+                <a href="https://www.linkedin.com/in/sahar-khayyati-94373b79" target="_blank" rel="noreferrer" className="text-sm border border-gray-700 px-4 py-1 rounded-full hover:bg-white hover:text-black transition">LinkedIn</a>
+              </div>
+            </div>
           </div>
-          <a
-            href="mailto:contact@zahrakhayyati.com"
-            className="px-5 py-2.5 bg-white text-slate-900 font-semibold rounded-xl text-sm hover:bg-slate-100 transition-colors whitespace-nowrap"
-          >
+          
+          <a href="mailto:Sahar.khayyati@ut.ac.ir" className="inline-block rounded-full bg-white px-10 py-4 font-bold text-black hover:bg-gray-200 transition shadow-lg">
             Email Me
           </a>
         </div>
-      </Section>
+      </section>
+
+      <footer className="py-10 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} Zahra Khayyati. All rights reserved.
+      </footer>
     </main>
   );
 }
