@@ -1,23 +1,29 @@
+type SectionItem = {
+  title: string;
+  text: string;
+};
+
 type SectionProps = {
   id: string;
   title: string;
-  items: string[];
+  items?: SectionItem[];
 };
 
-export default function Section({ id, title, items }: SectionProps) {
+export default function Section({ id, title, items = [] }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-24 py-16">
-      <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-6">
+      <h2 className="mb-6 text-2xl font-semibold text-slate-900 md:text-3xl">
         {title}
       </h2>
 
-      <ul className="space-y-3 text-slate-700 leading-7">
+      <div className="space-y-4 text-slate-700 leading-7">
         {items.map((item, index) => (
-          <li key={index} className="list-disc ml-6">
-            {item}
-          </li>
+          <div key={index}>
+            <h3 className="font-semibold text-slate-900">{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
