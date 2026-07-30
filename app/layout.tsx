@@ -1,17 +1,10 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Zahra Khayyati | Academic & Architectural Portfolio",
+  title: "Zahra Khayyati | Architect & Researcher",
   description:
-    "Academic and architectural portfolio of Zahra Khayyati, focusing on sustainable spatial planning, critical infrastructure, research methodology, and design-led practice.",
-  metadataBase: new URL("https://zahra-website.vercel.app"),
-  openGraph: {
-    title: "Zahra Khayyati",
-    description:
-      "Academic and architectural portfolio of Zahra Khayyati.",
-    type: "website",
-  },
+    "Personal academic and professional website of Zahra Khayyati, Architect, Project Manager, and PhD Researcher in Spatial Planning and Sustainable Infrastructure.",
 };
 
 export default function RootLayout({
