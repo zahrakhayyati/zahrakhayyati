@@ -299,7 +299,14 @@ export default function Home() {
               Publications
             </span>
             <h2 className="text-2xl font-light tracking-tight md:text-3xl">
-              A Compact Development Framework for Administrative-Support Complexes
+              <a
+                href="https://civilica.com/doc/2609379/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-amber-400 transition-colors"
+              >
+                A Compact Development Framework for Administrative-Support Complexes
+              </a>
             </h2>
             <p className="text-sm text-slate-400 font-mono">
               6th International Conference on Modern Technologies in Architecture and Urban Planning, 2025
